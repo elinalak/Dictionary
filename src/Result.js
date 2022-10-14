@@ -22,7 +22,21 @@ export default function Result(props) {
             );
           })}
         </div>
-        <div className="col-sm-6"></div>
+        <div className="col-sm-6">
+          <p className="partOfSpeech">Synonyms</p>
+
+          {props.response.meanings.map(function(synonym) {
+            return synonym.synonyms.map(function(item, index) {
+              return <div key={index}>{item}</div>;
+            });
+          })}
+
+          <p className="partOfSpeech">Exapmles</p>
+
+          {props.response.meanings.map(function(examples, index) {
+            return <p></p>;
+          })}
+        </div>
       </div>
     );
   else return null;
