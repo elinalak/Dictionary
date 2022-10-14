@@ -1,13 +1,21 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
+import axios from "axios";
 
 export default function Dictionary() {
   let [word, setWord] = useState("");
+
+  function showResponse(response) {
+    console.log(response.data[0]);
+  }
 
   function handleSubmit(event) {
     event.preventDefault();
     console.log("Is submitting");
     console.log(word);
+    //documentation: https://dictionaryapi.dev/
+    let APIurl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
+    axios.get(APIurl).then(showResponse);
   }
 
   function changeWord(event) {
