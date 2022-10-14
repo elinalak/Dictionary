@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
+import Result from "./Result";
 
 export default function Dictionary() {
   let [word, setWord] = useState("");
+  let [response, setResponse] = useState(null);
 
   function showResponse(response) {
-    console.log(response.data[0]);
+    setResponse(response.data[0]);
   }
 
   function handleSubmit(event) {
@@ -23,15 +25,18 @@ export default function Dictionary() {
   }
 
   return (
-    <form className="mt-4" onSubmit={handleSubmit}>
-      <header className="mt-3">Dictionary</header>
-      <input
-        className="mt-2"
-        type="search"
-        placeholder="Type here..."
-        autoFocus="on"
-        onChange={changeWord}
-      ></input>
-    </form>
+    <div>
+      <form className="mt-4" onSubmit={handleSubmit}>
+        <header className="Header-name mt-3">Dictionary</header>
+        <input
+          className="mt-2"
+          type="search"
+          placeholder="Type here..."
+          autoFocus="on"
+          onChange={changeWord}
+        ></input>
+      </form>
+      <Result response={response} />
+    </div>
   );
 }

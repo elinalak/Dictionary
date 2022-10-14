@@ -1,3 +1,17 @@
 .App {
   text-align: center;
 }
+
+.Header-name {
+  font-family: "Permanent Marker", cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+}
+
+.partOfSpeech {
+  font-family: "Permanent Marker", cursive;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 24px;
+}
