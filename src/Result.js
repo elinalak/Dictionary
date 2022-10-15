@@ -17,7 +17,12 @@ export default function Result(props) {
                   {meaning.definitions.map(function(definitions, index) {
                     return <li key={index}>{definitions.definition}</li>;
                   })}
-                </p>{" "}
+                </p>
+                <p className="partOfSpeech">Exapmles</p>
+
+                {props.response.meanings.map(function(examples, index) {
+                  return <p></p>;
+                })}
               </div>
             );
           })}
@@ -29,12 +34,6 @@ export default function Result(props) {
             return synonym.synonyms.map(function(item, index) {
               return <div key={index}>{item}</div>;
             });
-          })}
-
-          <p className="partOfSpeech">Exapmles</p>
-
-          {props.response.meanings.map(function(examples, index) {
-            return <p></p>;
           })}
         </div>
       </div>

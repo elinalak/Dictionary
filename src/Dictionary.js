@@ -9,6 +9,7 @@ export default function Dictionary() {
 
   function showResponse(response) {
     setResponse(response.data[0]);
+    console.log(response.data[0]);
   }
 
   function handleSubmit(event) {
