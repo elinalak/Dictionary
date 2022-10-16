@@ -24,11 +24,6 @@ export default function Result(props) {
                     );
                   })}
                 </p>
-                {/* <p className="partOfSpeech">Exapmles</p>
-
-                {props.response.meanings.map(function(examples, index) {
-                  return <p>{examples.example}</p>;
-                })} */}
               </div>
             );
           })}
