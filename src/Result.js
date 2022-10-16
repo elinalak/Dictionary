@@ -7,7 +7,7 @@ export default function Result(props) {
     return (
       <div className="row">
         <div className="col-sm-6">
-          <h2 className="Header-name">{props.response.word}</h2>
+          <h2 className="Header-name text-danger">{props.response.word}</h2>
           <p>{props.response.phonetic}</p>
           {props.response.meanings.map(function(meaning, index) {
             return (
@@ -15,14 +15,20 @@ export default function Result(props) {
                 <p className="partOfSpeech">{meaning.partOfSpeech}</p>
                 <p key={index}>
                   {meaning.definitions.map(function(definitions, index) {
-                    return <li key={index}>{definitions.definition}</li>;
+                    return (
+                      <div>
+                        <li key={index}>{definitions.definition}</li>
+
+                        <p className="text-danger">{definitions.example}</p>
+                      </div>
+                    );
                   })}
                 </p>
-                <p className="partOfSpeech">Exapmles</p>
+                {/* <p className="partOfSpeech">Exapmles</p>
 
                 {props.response.meanings.map(function(examples, index) {
-                  return <p></p>;
-                })}
+                  return <p>{examples.example}</p>;
+                })} */}
               </div>
             );
           })}
