@@ -1,4 +1,5 @@
 import React from "react";
+import Phonetic from "./Phonetic";
 
 export default function Result(props) {
   console.log(props.response);
@@ -8,22 +9,22 @@ export default function Result(props) {
       <div className="row">
         <div className="col-sm-6">
           <h2 className="Header-name text-danger">{props.response.word}</h2>
-          <p>{props.response.phonetic}</p>
-          {props.response.meanings.map(function(meaning, index) {
+          <Phonetic response={props.response} />
+          {props.response.meanings.map(function (meaning, index) {
             return (
               <div>
-                <p className="partOfSpeech">{meaning.partOfSpeech}</p>
-                <p key={index}>
-                  {meaning.definitions.map(function(definitions, index) {
+                <div className="partOfSpeech">{meaning.partOfSpeech}</div>
+                <div key={index}>
+                  {meaning.definitions.map(function (definitions, index) {
                     return (
                       <div>
                         <li key={index}>{definitions.definition}</li>
 
-                        <p className="text-danger">{definitions.example}</p>
+                        <div className="text-danger">{definitions.example}</div>
                       </div>
                     );
                   })}
-                </p>
+                </div>
               </div>
             );
           })}
@@ -31,8 +32,8 @@ export default function Result(props) {
         <div className="col-sm-6">
           <p className="partOfSpeech">Synonyms</p>
 
-          {props.response.meanings.map(function(synonym) {
-            return synonym.synonyms.map(function(item, index) {
+          {props.response.meanings.map(function (synonym) {
+            return synonym.synonyms.map(function (item, index) {
               return <div key={index}>{item}</div>;
             });
           })}
