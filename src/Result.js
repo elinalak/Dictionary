@@ -2,6 +2,7 @@ import React from "react";
 import Definition from "./Definition";
 import Phonetic from "./Phonetic";
 import Synonyms from "./Synonyms";
+import Photos from "./Photos";
 
 export default function Result(props) {
   console.log(props.response);
@@ -25,6 +26,7 @@ export default function Result(props) {
         </div>
         <div className="col-sm-6 article">
           <p className="partOfSpeech">Synonyms</p>
+          <Photos photos={props.photos} />
           <Synonyms response={props.response} />
         </div>
       </div>
