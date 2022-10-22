@@ -7,12 +7,13 @@ export default function Phonetic(props) {
   return (
     <div>
       {props.response.phonetics.map(function (phonetic, index) {
-        return (
-          <div>
-            <ReactAudioPlayer src={phonetic.audio} controls />
-            <div key={index}>{phonetic.text}</div>
-          </div>
-        );
+        if (phonetic.audio)
+          return (
+            <div>
+              <ReactAudioPlayer src={phonetic.audio} controls />
+              <div key={index}>{phonetic.text}</div>
+            </div>
+          );
       })}
     </div>
   );
