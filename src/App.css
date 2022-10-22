@@ -15,3 +15,13 @@
   font-weight: 200;
   font-size: 24px;
 }
+
+.example {
+  padding: 5px;
+}
+
+@media screen and (max-width: 578px) {
+  .definition {
+    padding: 10px;
+  }
+}

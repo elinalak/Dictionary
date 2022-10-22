@@ -32,7 +32,7 @@ export default function Dictionary() {
         <input
           className="mt-2"
           type="search"
-          placeholder="Type here..."
+          placeholder="Type any word.."
           autoFocus="on"
           onChange={changeWord}
         ></input>
