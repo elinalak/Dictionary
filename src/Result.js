@@ -1,5 +1,6 @@
 import React from "react";
 import Phonetic from "./Phonetic";
+import Synonyms from "./Synonyms";
 
 export default function Result(props) {
   console.log(props.response);
@@ -33,12 +34,7 @@ export default function Result(props) {
         </div>
         <div className="col-sm-6 article">
           <p className="partOfSpeech">Synonyms</p>
-
-          {props.response.meanings.map(function (synonym) {
-            return synonym.synonyms.map(function (item, index) {
-              return <div key={index}>{item}</div>;
-            });
-          })}
+          <Synonyms response={props.response} />
         </div>
       </div>
     );
