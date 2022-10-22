@@ -1,4 +1,5 @@
 import React from "react";
+import Definition from "./Definition";
 import Phonetic from "./Phonetic";
 import Synonyms from "./Synonyms";
 
@@ -16,17 +17,7 @@ export default function Result(props) {
               <div>
                 <div className="partOfSpeech">{meaning.partOfSpeech}</div>
                 <div key={index} className="definition">
-                  {meaning.definitions.map(function (definitions, index) {
-                    return (
-                      <div>
-                        <li key={index}>{definitions.definition}</li>
-
-                        <div className="text-danger example">
-                          {definitions.example}
-                        </div>
-                      </div>
-                    );
-                  })}
+                  <Definition meaning={meaning} />
                 </div>
               </div>
             );
