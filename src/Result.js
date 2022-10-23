@@ -25,8 +25,8 @@ export default function Result(props) {
           })}
         </div>
         <div className="col-sm-6 article">
-          <p className="partOfSpeech">Synonyms</p>
           <Photos photos={props.photos} />
+          <p className="partOfSpeech">Synonyms</p>
           <Synonyms response={props.response} />
         </div>
       </div>
