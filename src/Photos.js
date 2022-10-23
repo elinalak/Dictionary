@@ -3,7 +3,7 @@ import React from "react";
 export default function Photos(props) {
   if (props.photos)
     return (
-      <div className="me-3">
+      <div className="ms-3 me-3">
         <div className="row mt-4">
           {props.photos.map(function (photo, index) {
             console.log(`link is` + photo.src.original);
