@@ -25,6 +25,12 @@ export default function Dictionary() {
     search();
   }
 
+  function handleClick(event) {
+    event.preventDefault();
+    console.log("click");
+    search();
+  }
+
   function search() {
     console.log(word);
     //documentation: https://dictionaryapi.dev/
@@ -58,7 +64,14 @@ export default function Dictionary() {
             placeholder="Type any word.."
             autoFocus="on"
             onChange={changeWord}
-          ></input>
+          />
+          <button
+            className="btn btn-light ms-2"
+            type="button"
+            onClick={handleClick}
+          >
+            🔍
+          </button>
         </form>
         <Result response={response} photos={photos} />
       </div>
