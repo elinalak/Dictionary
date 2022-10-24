@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
 import Result from "./Result";
+import Footer from "./Footer";
 
 export default function Dictionary() {
-  let [word, setWord] = useState("");
+  let [word, setWord] = useState("react");
   let [response, setResponse] = useState(null);
   let [loaded, setLoaded] = useState(false);
   let [photos, setPhotos] = useState(null);
@@ -15,7 +16,6 @@ export default function Dictionary() {
   }
 
   function handlePexelResponse(response) {
-    console.log(`Photos is ` + response.data.photos);
     setPhotos(response.data.photos);
   }
 
@@ -74,8 +74,13 @@ export default function Dictionary() {
           </button>
         </form>
         <Result response={response} photos={photos} />
+        <Footer />
       </div>
     );
   else load();
-  return "Loading";
+  return (
+    <div>
+      <p>Loading...</p>
+    </div>
+  );
 }

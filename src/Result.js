@@ -5,14 +5,13 @@ import Synonyms from "./Synonyms";
 import Photos from "./Photos";
 
 export default function Result(props) {
-  console.log(props.response);
-
-  if (props.response)
+  if (props.response && props.photos)
     return (
       <div className="row">
         <div className="col-sm-6 article">
           <h2 className="Header-name text-danger">{props.response.word}</h2>
           <Phonetic response={props.response} />
+
           {props.response.meanings.map(function (meaning, index) {
             return (
               <div>
