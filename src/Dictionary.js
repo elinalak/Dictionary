@@ -40,7 +40,7 @@ export default function Dictionary() {
     //https://www.pexels.com/api/documentation/#photos-search
     let pexelAPIkey = `563492ad6f91700001000001f753905d78644583bb94ff5889211c6b`;
     let pexelURL = `https://api.pexels.com/v1/search?query=${word}&per_page=12`;
-    let headers = { Authorization: `Bearer ${pexelAPIkey}` };
+    let headers = { Authorization: pexelAPIkey };
     axios.get(pexelURL, { headers: headers }).then(handlePexelResponse);
   }
 
