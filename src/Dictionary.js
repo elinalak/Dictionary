@@ -5,7 +5,7 @@ import Result from "./Result";
 import Footer from "./Footer";
 
 export default function Dictionary() {
-  let [word, setWord] = useState("thanks");
+  let [word, setWord] = useState("ocean");
   let [response, setResponse] = useState(null);
   let [loaded, setLoaded] = useState(false);
   let [photos, setPhotos] = useState(null);
